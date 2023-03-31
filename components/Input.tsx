@@ -58,7 +58,7 @@ const Input: React.FC<InputProps> = ({
                 peer-focus-translate-y-3
             "
             htmlFor={id}>
-                Email
+                {label}
             </label>
         </div>
     )
