@@ -24,19 +24,20 @@ const Auth = () => {
                     <div className="bg-black bg-opacity-70 px-16 py-16 self-center mt-2 lg:w-2/5 lg:max-w-md rounded-md w-full">
 
                         <h2 className="text-white text-4xl mb-8 font-semibold">
-                            Sign In
+                            {variant === 'login' ? 'Sign In' : 'Register'}
                         </h2>
 
                         {/* Input Container */}
                         <div className="flex flex-col gap-4">
 
-                            {/* username input */}
+                        {variant === 'register' && (
                             <Input
                                 label="Username"
                                 onChange={(ev: any) => setName(ev.target.value)}
                                 id="name"
                                 value={name}
                             />
+                        )}
 
                             {/* email input */}
                             <Input
@@ -60,12 +61,12 @@ const Auth = () => {
 
                         {/* login button & text underneath */}
                         <button className='bg-red-600 py-3 text-white rounded-md w-full mt-10 hover:bg-red-700 transition'>
-                            Login
+                            {variant === 'login' ? 'Login' : 'Sign Up'}
                         </button>
                         <p className='text-neutral-500 mt-12'>
-                            First time using Netflix?
+                            {variant === 'login' ? 'First time using Netflix?' : 'Already have an account?'}
                             <span onClick={toggleVariant} className='text-white ml-1 hover:underline cursor:pointer'>
-                                Create an account
+                                {variant === 'login' ? 'Create an account' : 'Sign in'}
                             </span>
                         </p>
                         
